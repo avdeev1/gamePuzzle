@@ -54,7 +54,7 @@ input {
   justify-content: space-around;
 }
 
-.start {
+.background-popup {
   display: flex;
   position: fixed;
   top: 0;

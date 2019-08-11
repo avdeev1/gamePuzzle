@@ -19,7 +19,7 @@
 </div>
 
 
-<div class="start" *ngIf="isSelect" (click)="hidePopup()">
+<div class="background-popup" *ngIf="isSelect" (click)="hidePopup()">
   <div class="popup" (click)="stopClick()">
     <h3>Введите число ходов для перемешивания</h3>
     <p>Рекомендуем минимум {{defaultForShuffle}}</p>
@@ -31,11 +31,11 @@
 </div>
 
 
-<div class="start" *ngIf="isWin" (click)="hidePopup()">
+<div class="background-popup" *ngIf="isWin">
   <div class="popup">
     <h3>Поздравляем, Вы победили!</h3>
-    <h4>Ваш результат: {{countSteps}} ходов.</h4>
+    <h4>Количество ходов: {{countSteps}}</h4>
     <h4>Время: {{timer | formatTimer}}</h4>
-    <button>Ok</button>
+    <button (click)="hidePopup()">Ok</button>
   </div>
 </div>
