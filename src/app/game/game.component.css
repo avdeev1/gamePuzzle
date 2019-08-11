@@ -1,0 +1,82 @@
+.block-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  outline: 1px solid black;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 10px;
+  border-radius: 15%;
+  font-size: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: bisque;
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+input {
+  font-size: 24px;
+}
+
+.block {
+  outline: 1px solid black;
+  font-size: 2rem;
+}
+
+.center:hover {
+  cursor: pointer;
+  background-color: burlywood;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.start {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, .8);
+  justify-content: center;
+  align-items: center;
+}
+
+
+.popup {
+  padding: 15px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: white;
+  opacity: 1;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

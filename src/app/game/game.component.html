@@ -1,0 +1,41 @@
+<a routerLink="/">На главную</a>
+<div class="btn-container">
+  <button (click)="showPopup()">Размешать и начать</button>
+  <button (click)="stop()">Стоп</button>
+  <button (click)="reset()">Сбросить</button>
+</div>
+
+<div class="info">
+  <span>Ходов: {{countSteps}}</span>
+  <span>Время: {{timer | formatTimer}}</span>
+</div>
+
+<div class="block-container">
+  <div *ngFor="let row of matrix; let i = index" class="block">
+    <div *ngFor="let coll of matrix; let j = index" class="block" [ngStyle]="{width: sizeInPx, height: sizeInPx}">
+      <div class="center" (click)="step(j, i)">{{matrix[j][i]}}</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="start" *ngIf="isSelect" (click)="hidePopup()">
+  <div class="popup" (click)="stopClick()">
+    <h3>Введите число ходов для перемешивания</h3>
+    <p>Рекомендуем минимум {{defaultForShuffle}}</p>
+    <div class="input-container">
+      <input [value]="defaultForShuffle" type="number" #htmlInputElement required>
+      <button (click)="shuffle(+htmlInputElement.value)">Начать</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="start" *ngIf="isWin" (click)="hidePopup()">
+  <div class="popup">
+    <h3>Поздравляем, Вы победили!</h3>
+    <h4>Ваш результат: {{countSteps}} ходов.</h4>
+    <h4>Время: {{timer | formatTimer}}</h4>
+    <button>Ok</button>
+  </div>
+</div>
