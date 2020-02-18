@@ -14,6 +14,7 @@ export class GameComponent implements OnInit {
   private fontSize: string;
   private idx = this.size - 1;  // index of empty element in matrix
   private idy = this.size - 1;  // index of empty element in matrix
+  private isHelp = true;
   private countSteps = 0;
   private timer = 0;
   private isGame = false;
@@ -140,6 +141,7 @@ export class GameComponent implements OnInit {
   hidePopup() {
     this.isSelect = false;
     this.isWin = false;
+    this.isHelp = false;
   }
 
   stopClick() {
@@ -148,5 +150,9 @@ export class GameComponent implements OnInit {
 
   showWinPopup() {
     this.isWin = true;
+  }
+
+  help() {
+    this.isHelp = true;
   }
 }

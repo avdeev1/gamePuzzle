@@ -24,6 +24,17 @@ button {
   font-size: 16px;
 }
 
+.btn-subcontainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-subcontainer:first-child {
+  margin-bottom: 10px;
+}
+
 button:hover {
   cursor: pointer;
   background-color: bisque;
@@ -47,6 +58,8 @@ button:active, button:focus {
   width: 400px;
   height: 400px;
   outline: 1px solid black;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .block {
@@ -117,6 +130,7 @@ input {
 
   button {
     margin-bottom: 10px;
+    margin-right: 0;
   }
 
   .info {
@@ -161,5 +175,9 @@ input {
 
   .popup-win {
     height: 230px;
+  }
+
+  .popup-help {
+    height: 300px;
   }
 }

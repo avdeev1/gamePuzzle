@@ -27,6 +27,14 @@ app-menu {
 @media screen and (max-width: 500px){
   app-game {
     width: 100vw;
-    /*height: 100vh;*/
+  }
+}
+
+@media screen and (max-height: 600px) {
+  app-menu {
+    height: 95vh;
+  }
+  body {
+    height: 95vh;
   }
 }

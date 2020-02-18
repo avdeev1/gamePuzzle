@@ -1,8 +1,13 @@
 <a class="go-to-main" routerLink="/">На главную</a>
 <div class="btn-container">
-  <button (click)="showPopup()">Размешать и начать</button>
-  <button (click)="reset()">Сбросить</button>
-  <button (click)="stop()">Стоп</button>
+  <div class="btn-subcontainer" >
+    <button (click)="showPopup()">Размешать и начать</button>
+    <button (click)="reset()">Сбросить</button>
+  </div>
+  <div class="btn-subcontainer" >
+    <button (click)="stop()">Стоп</button>
+    <button (click)="help()">Помощь</button>
+  </div>
 </div>
 
 <div class="info">
@@ -38,5 +43,16 @@
     <h3>Количество ходов: {{countSteps}}</h3>
     <h3>Время: {{timer | formatTimer}}</h3>
     <button class="popup-win__button" (click)="hidePopup()">Ok</button>
+  </div>
+</div>
+
+<div class="background-popup" *ngIf="isHelp">
+  <div class="popup popup-help">
+    <h2>Help!</h2>
+    <h3>Игра "Пятнашки"</h3>
+    <p>Цель игры - расставить блоки в порядке возрастания от 1 до {{size * size - 1}}.</p>
+    <p>Нажимай на блоки и передвигай их, чтобы получить нужный порядок.</p>
+    <p>Удачи!!!</p>
+    <button class="popup-win__button" (click)="hidePopup()">В бой!!!</button>
   </div>
 </div>
