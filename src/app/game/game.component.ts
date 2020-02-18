@@ -18,7 +18,7 @@ export class GameComponent implements OnInit {
   private isGame = false;
   private isSelect = false;     // flag for select popup
   private defaultForShuffle = [30, 150, 300, 400, 500, 700][this.size - 3];
-  private timerId: number;
+  private timerId: any;
   private isWin = false;        // flag for win popup
   private indexes = [
     [-1, 0],
