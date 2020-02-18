@@ -1,8 +1,8 @@
-<a routerLink="/">На главную</a>
+<a class="go-to-main" routerLink="/">На главную</a>
 <div class="btn-container">
   <button (click)="showPopup()">Размешать и начать</button>
-  <button (click)="stop()">Стоп</button>
   <button (click)="reset()">Сбросить</button>
+  <button (click)="stop()">Стоп</button>
 </div>
 
 <div class="info">
@@ -12,7 +12,8 @@
 
 <div class="block-container">
   <div *ngFor="let row of matrix; let i = index" class="block">
-    <div *ngFor="let coll of matrix; let j = index" class="block" [ngStyle]="{width: sizeInPx, height: sizeInPx}">
+    <div *ngFor="let coll of matrix; let j = index" class="block"
+         [ngStyle]="{width: sizeInPx, height: sizeInPx, 'font-size': fontSize}">
       <div class="center" (click)="step(j, i)">{{matrix[j][i]}}</div>
     </div>
   </div>
@@ -32,10 +33,10 @@
 
 
 <div class="background-popup" *ngIf="isWin">
-  <div class="popup">
-    <h3>Поздравляем, Вы победили!</h3>
-    <h4>Количество ходов: {{countSteps}}</h4>
-    <h4>Время: {{timer | formatTimer}}</h4>
-    <button (click)="hidePopup()">Ok</button>
+  <div class="popup popup-win">
+    <h2>Поздравляем, Вы победили!</h2>
+    <h3>Количество ходов: {{countSteps}}</h3>
+    <h3>Время: {{timer | formatTimer}}</h3>
+    <button class="popup-win__button" (click)="hidePopup()">Ok</button>
   </div>
 </div>

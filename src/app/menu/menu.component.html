@@ -1,3 +1,14 @@
-<h2>Добро пожаловать</h2>
-<h2>Выберите размер поля</h2>
-<a [routerLink]="['/', 'game', s.id]" *ngFor="let s of sizes">{{s.size}}</a>
+<div class="menu-container">
+  <h2>Добро пожаловать в мою игру "Пятнашки"</h2>
+  <h3 class="header-link">Реализовано с помощью
+    <i><a class="now-link" target="_blank" href="https://zeit.co/">now.sh</a></i>
+  </h3>
+  <h2 class="choose-size">Выберите размер поля</h2>
+  <div>
+    <a  class="game-links" [routerLink]="['/', 'game', s.id]" *ngFor="let s of sizes">{{s.size}}</a>
+  </div>
+  <div class="git-link-container">
+    <span class="git">Link: <a class="git-link" href="https://github.com/avdeev1/gamePuzzle" target="_blank">github</a></span>
+    <span>By <a class="git-link" href="https://github.com/avdeev1" target="_blank">avdeev1</a></span>
+  </div>
+</div>

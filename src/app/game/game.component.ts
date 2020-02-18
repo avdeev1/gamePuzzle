@@ -11,6 +11,7 @@ export class GameComponent implements OnInit {
   private matrix: string[][] = [];
   private exampleForCheck: string[][] = [];
   private sizeInPx: string = 400 / this.size + 'px';
+  private fontSize: string;
   private idx = this.size - 1;  // index of empty element in matrix
   private idy = this.size - 1;  // index of empty element in matrix
   private countSteps = 0;
@@ -31,6 +32,10 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (screen.width < 500) {
+      this.sizeInPx = 300 / this.size + 'px';
+    }
+    this.fontSize = `${parseInt(this.sizeInPx, 10) * 0.66}px`;
     this.initMatrix();
   }
 

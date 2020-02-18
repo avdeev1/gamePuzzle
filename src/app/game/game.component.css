@@ -1,23 +1,27 @@
-.block-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 400px;
-  outline: 1px solid black;
+.go-to-main {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
+.go-to-main:hover {
+  cursor: pointer;
+  background-color: wheat;
+  text-decoration: none;
 }
 
 .btn-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding: 5px;
 }
 
 button {
   padding: 10px;
   border-radius: 15%;
   font-size: 16px;
-  margin-right: 10px;
 }
 
 button:hover {
@@ -29,18 +33,24 @@ button:active, button:focus {
   outline: none;
 }
 
-input {
-  font-size: 24px;
+.info {
+  font-size: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.block-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  outline: 1px solid black;
 }
 
 .block {
   outline: 1px solid black;
-  font-size: 2rem;
-}
-
-.center:hover {
-  cursor: pointer;
-  background-color: burlywood;
 }
 
 .center {
@@ -50,10 +60,9 @@ input {
   align-items: center;
 }
 
-.info {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-around;
+.center:hover {
+  cursor: pointer;
+  background-color: burlywood;
 }
 
 .background-popup {
@@ -68,7 +77,6 @@ input {
   align-items: center;
 }
 
-
 .popup {
   padding: 15px;
   border: 1px solid black;
@@ -79,49 +87,42 @@ input {
 
 .input-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
+input {
+  font-size: 24px;
+  border: 1px solid black;
+}
+
+.popup-win {
+  padding: 20px;
+  height: 230px;
+}
+
+.popup-win__button {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
 @media screen and (max-width: 500px) {
+
+  .btn-container {
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-between;
+  }
+
+  button {
+    margin-bottom: 10px;
+  }
+
   .info {
     padding-bottom: 5px;
     border-bottom: 1px solid black;
     margin-bottom: 10px;
-  }
-
-  .block-container {
-    width: 100vw;
-    height: 300px;
-    outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .block, .center {
-    width: 35px !important;
-    height: 35px !important;
-    font-size: 1rem !important;
-  }
-
-  button {
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 13px;
-  }
-
-  .btn-container {
-    width: 100vw;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: space-around;
-  }
-
-  .popup {
-    width: 100vw;
-    height: 200px;
   }
 
   .input-container {
@@ -142,5 +143,23 @@ input {
 
   input:focus {
     border-color: transparent;
+  }
+
+  .block-container {
+    width: 100vw;
+    height: 300px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .popup {
+    width: 100vw;
+    height: 200px;
+  }
+
+  .popup-win {
+    height: 230px;
   }
 }

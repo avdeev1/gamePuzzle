@@ -1,4 +1,68 @@
+.menu-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   margin-right: 10px;
   font-size: 24px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.now-link {
+  font-size: 1em;
+  align-self: center;
+  margin: 5px 0 0;
+}
+
+.now-link::before {
+  content: '';
+  display: inline-block;
+  border: 10px solid transparent;
+  border-top: 1px solid transparent;
+  border-bottom: 20px solid black;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.choose-size {
+  margin-top: 10px;
+}
+
+.game-links {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10%;
+}
+
+.game-links:hover {
+  background-color: wheat;
+  cursor: pointer;
+}
+
+.git-link-container {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.git-link {
+  margin: 0;
+  font-size: 18px;
+}
+
+.git-link:hover {
+  text-decoration: underline;
+}
+
+.git {
+  margin-bottom: 10px;
 }
