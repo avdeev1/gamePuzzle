@@ -19,6 +19,7 @@
 }
 
 button {
+  border: 1px solid black;
   padding: 10px;
   border-radius: 15%;
   font-size: 16px;
@@ -27,12 +28,16 @@ button {
 .btn-subcontainer {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 .btn-subcontainer:first-child {
   margin-bottom: 10px;
+}
+
+.btn-subcontainer button {
+  min-width: 95px;
 }
 
 button:hover {
@@ -46,7 +51,7 @@ button:active, button:focus {
 
 .info {
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-around;
 }
@@ -179,5 +184,11 @@ input {
 
   .popup-help {
     height: 300px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .info {
+    font-size: 16px;
   }
 }

@@ -1,18 +1,18 @@
-<a class="go-to-main" routerLink="/">На главную</a>
+<a class="go-to-main" [routerLink]="['/', lang === 'en' ? 'en' : '/']">{{dict['go-to-main'][lang]}}</a>
 <div class="btn-container">
   <div class="btn-subcontainer" >
-    <button (click)="showPopup()">Размешать и начать</button>
-    <button (click)="reset()">Сбросить</button>
+    <button (click)="showPopup()">{{dict['shuffle-and-start'][lang]}}</button>
+    <button (click)="reset()">{{dict['reset'][lang]}}</button>
   </div>
   <div class="btn-subcontainer" >
-    <button (click)="stop()">Стоп</button>
-    <button (click)="help()">Помощь</button>
+    <button (click)="stop()">{{dict['stop'][lang]}}</button>
+    <button (click)="help()">{{dict['help'][lang]}}</button>
   </div>
 </div>
 
 <div class="info">
-  <span>Ходов: {{countSteps}}</span>
-  <span>Время: {{timer | formatTimer}}</span>
+  <span>{{dict['info-steps'][lang]}}: {{countSteps}}</span>
+  <span>{{dict['info-timer'][lang]}}: {{timer | formatTimer}}</span>
 </div>
 
 <div class="block-container">
@@ -27,11 +27,11 @@
 
 <div class="background-popup" *ngIf="isSelect" (click)="hidePopup()">
   <div class="popup" (click)="stopClick()">
-    <h3>Введите число ходов для перемешивания</h3>
-    <p>Рекомендуем минимум {{defaultForShuffle}}</p>
+    <h3>{{dict['popup-head'][lang]}}</h3>
+    <p>{{dict['popup-refer'][lang]}} {{defaultForShuffle}}</p>
     <div class="input-container">
       <input [value]="defaultForShuffle" type="number" #htmlInputElement required>
-      <button (click)="shuffle(+htmlInputElement.value)">Начать</button>
+      <button (click)="shuffle(+htmlInputElement.value)">{{dict['popup-button-start'][lang]}}</button>
     </div>
   </div>
 </div>
@@ -39,20 +39,20 @@
 
 <div class="background-popup" *ngIf="isWin">
   <div class="popup popup-win">
-    <h2>Поздравляем, Вы победили!</h2>
-    <h3>Количество ходов: {{countSteps}}</h3>
-    <h3>Время: {{timer | formatTimer}}</h3>
+    <h2>{{dict['popup-win'][lang]}}</h2>
+    <h3>{{dict['popup-win-steps-numbers'][lang]}}: {{countSteps}}</h3>
+    <h3>{{dict['popup-win-time'][lang]}}: {{timer | formatTimer}}</h3>
     <button class="popup-win__button" (click)="hidePopup()">Ok</button>
   </div>
 </div>
 
 <div class="background-popup" *ngIf="isHelp">
   <div class="popup popup-help">
-    <h2>Help!</h2>
-    <h3>Игра "Пятнашки"</h3>
-    <p>Цель игры - расставить блоки в порядке возрастания от 1 до {{size * size - 1}}.</p>
-    <p>Нажимай на блоки и передвигай их, чтобы получить нужный порядок.</p>
-    <p>Удачи!!!</p>
-    <button class="popup-win__button" (click)="hidePopup()">В бой!!!</button>
+    <h2>{{dict['popup-help'][lang]}}</h2>
+    <h3>{{dict['popup-help-title'][lang]}}</h3>
+    <p>{{dict['popup-help-goal'][lang]}} {{size * size - 1}}.</p>
+    <p>{{dict['popup-help-instruction'][lang]}}</p>
+    <p>{{dict['popup-help-glhf'][lang]}}</p>
+    <button class="popup-win__button" (click)="hidePopup()">{{dict['popup-help-got-it'][lang]}}</button>
   </div>
 </div>

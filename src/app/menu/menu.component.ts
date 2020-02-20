@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ISize} from '../models/model';
+import {ISize, getTrueLang} from '../models/';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,6 +8,9 @@ import {ISize} from '../models/model';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+
+  private dict = getTrueLang;
+  private lang = this.router.url.split('/').pop() || 'ru';
 
   sizes: ISize[] = [
     {
@@ -29,9 +33,24 @@ export class MenuComponent implements OnInit {
       id: 8
     }];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  changeLang(lang) {
+    this.lang = lang;
+    if (lang === 'en') {
+      this.router.navigateByUrl('/en');
+    } else {
+      this.router.navigateByUrl('');
+    }
+  }
+
+  getRouterLink(id: number) {
+    if (this.lang === 'en') {
+      return `/game/en/${id}`;
+    }
+    return `/game/${id}`;
+  }
 }

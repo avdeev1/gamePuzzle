@@ -1,14 +1,21 @@
 <div class="menu-container">
-  <h2>Добро пожаловать в мою игру "Пятнашки"</h2>
-  <h3 class="header-link">Реализовано с помощью
+  <div class="change-language-container">
+    <button [class.active]="lang === 'ru'" (click)="changeLang('ru')">Ru</button>
+    <button [class.active]="lang === 'en'" (click)="changeLang('en')">En</button>
+  </div>
+  <h2>{{dict.welcome[lang]}}</h2>
+  <h3 class="header-link">{{dict['header-link'][lang]}}
     <i><a class="now-link" target="_blank" href="https://zeit.co/">now.sh</a></i>
   </h3>
-  <h2 class="choose-size">Выберите размер поля</h2>
+  <h2 class="choose-size">{{dict['choose-size'][lang]}}</h2>
   <div>
-    <a  class="game-links" [routerLink]="['/', 'game', s.id]" *ngFor="let s of sizes">{{s.size}}</a>
+    <a class="game-links" [routerLink]="getRouterLink(s.id)"
+       *ngFor="let s of sizes">{{s.size}}</a>
   </div>
   <div class="git-link-container">
-    <span class="git">Link: <a class="git-link" href="https://github.com/avdeev1/gamePuzzle" target="_blank">github</a></span>
+    <span class="git">Link:
+      <a class="git-link" href="https://github.com/avdeev1/gamePuzzle" target="_blank">github</a>
+    </span>
     <span>By <a class="git-link" href="https://github.com/avdeev1" target="_blank">avdeev1</a></span>
   </div>
 </div>

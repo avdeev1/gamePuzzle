@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {getTrueLang} from '../models';
 
 @Component({
   selector: 'app-game',
@@ -8,6 +9,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class GameComponent implements OnInit {
   private size: number = parseInt(this.router.snapshot.paramMap.get('size'), 10);
+  private lang: string = this.router.snapshot.paramMap.get('lang') || 'ru';
+  private dict = getTrueLang;
   private matrix: string[][] = [];
   private exampleForCheck: string[][] = [];
   private sizeInPx: string = 400 / this.size + 'px';

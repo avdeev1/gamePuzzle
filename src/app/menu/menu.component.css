@@ -1,3 +1,28 @@
+.change-language-container {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change-language-container button {
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 10%;
+}
+
+.change-language-container button:hover {
+  background-color: wheat;
+  cursor: pointer;
+}
+
+.active {
+  text-decoration: underline;
+}
+
 .menu-container {
   height: 80vh;
   display: flex;
@@ -48,6 +73,7 @@ a:hover {
 
 .git-link-container {
   margin-top: auto;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,4 +91,29 @@ a:hover {
 
 .git {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 500px){
+  .change-language-container button {
+    font-size: 16px;
+  }
+
+  h2, h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .git-link-container {
+    margin-bottom: 0;
+  }
 }

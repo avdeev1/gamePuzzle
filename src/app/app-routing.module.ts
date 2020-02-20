@@ -9,7 +9,15 @@ const routes: Routes = [
     component: MenuComponent
   },
   {
+    path: 'en',
+    component: MenuComponent
+  },
+  {
     path: 'game/:size',
+    component: GameComponent
+  },
+  {
+    path: 'game/:lang/:size',
     component: GameComponent
   }
 ];
