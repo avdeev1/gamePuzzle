@@ -1,5 +1,7 @@
 # Puzzle
 
+[![site](https://img.shields.io/website?url=https%3A%2F%2Ftrains.zisest.ru)](https://puzzle.avdeev1.now.sh/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
