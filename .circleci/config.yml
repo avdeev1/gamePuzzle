@@ -13,7 +13,7 @@ jobs:
             - run: npm run build
             
   Linters:
-  executor:
+    executor:
       name: node/default
     steps:
       - checkout
@@ -22,7 +22,7 @@ jobs:
             - run: npm run lint
   
 workflows:
-    Build:
+    install-and-build:
       jobs:
         - Build
         - Linters
