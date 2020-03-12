@@ -1,13 +1,11 @@
 language: node_js
-node_js:
-  - '8'
+node_js: "10"
 
-cache:
-  directories:
-    - ./node_modules
+install: npm i
 
-install:
-  - npm install
-  
-build:
-  - npm run build
+jobs:
+  include:
+    - stage: "frontend"
+      node_js: "10"
+      name: "Building"
+      script: npm run build
