@@ -1,0 +1,11 @@
+language: node_js
+node_js: "10"
+
+install: npm i
+
+jobs:
+  include:
+    - stage: "frontend"
+      node_js: "10"
+      name: "Building"
+      script: npm run build
